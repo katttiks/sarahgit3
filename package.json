@@ -1,0 +1,31 @@
+{
+  "name": "sarahgit3",
+  "version": "1.0.0",
+  "description": "the variability is expert guys personas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katttiks/sarahgit3.git"
+  },
+  "keywords": [
+    "bot",
+    "experienced",
+    "new",
+    "guy"
+  ],
+  "author": "kartikeya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katttiks/sarahgit3/issues"
+  },
+  "homepage": "https://github.com/katttiks/sarahgit3#readme",
+  "dependencies": {
+    "botbuilder": "^3.7.0",
+    "dotenv": "^4.0.0",
+    "https": "^1.0.0",
+    "restify": "^4.3.0"
+  }
+}
