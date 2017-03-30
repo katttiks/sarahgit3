@@ -201,17 +201,7 @@ function(session, results){
        answer = results.response
        if(answer.toLowerCase().indexOf('no')>-1||answer.toLowerCase().indexOf('not')>-1||answer.toLowerCase().indexOf('nope')>-1) 
         {
-             session.send("All right, I'll render some more documents for you. They are")
-             session.send("Here you go: ")
-       
-            for(i=doc_count;i<doc_count + 3;i++){                  
-            //session.send("%s", obj1[i]['url']) 
-                doc_name = obj1[i]['url'].substring(obj1[i]['url'].lastIndexOf('/') + 1, obj1[i]['url'].length)
-                score = Number(obj1[i]['scores'])
-                score = Math.floor(score*100)    
-                session.send("Document name - " + doc_name +  "<br>" + "Relevance - " + score + "%" + "<br>" +"Author - " + obj1[i]['author'] + "<br>" + "Document url - " + obj1[i]['url'])                 
-            }
-        builder.Prompts.text(session, 'Did you find what you were looking for this time?');        
+             session.send("Well, that's all the information I have. You can call 57575757575 for more information. Ping me 'hi' if you want to know something else.")       
         }
       else if(answer.toLowerCase().indexOf('yes')>-1||answer.toLowerCase().indexOf('yeah')>-1||answer.toLowerCase().indexOf('yup')>-1)  
       {
@@ -222,52 +212,7 @@ function(session, results){
       {
           session.beginDialog('/exceptions')
       }      
-    },
-
-      function(session, results){
-       answer = results.response
-       if(answer.toLowerCase().indexOf('no')>-1||answer.toLowerCase().indexOf('not')>-1||answer.toLowerCase().indexOf('nope')>-1) 
-        {
-             session.send("I'll render some more documents for you.")
-             session.send("Here you go: ")
-       
-            for(i=doc_count + 3;i<doc_count + 6;i++){                  
-            //session.send("%s", obj1[i]['url']) 
-              score = Number(obj1[i]['scores'])
-              score = Math.floor(score*100)    
-              session.send("Document name - " + doc_name +  "<br>" + "Relevance - " + score + "%" + "<br>" +"Author - " + obj1[i]['author'] + "<br>" + "Document url - " + obj1[i]['url'])               
-            }
-        builder.Prompts.text(session, 'Hope you found it this time!');       
-        }
-        else if(answer.toLowerCase().indexOf('yes')>-1||answer.toLowerCase().indexOf('yeah')>-1||answer.toLowerCase().indexOf('yup')>-1)  
-      {
-          session.send("Well, that's great! Happy to help.")
-          session.beginDialog('/')
-         
-      }
-      else
-      {
-          session.beginDialog('/exceptions')
-      }     
-  },
-
-  function(session, results){
-      answer = results.response
-      if(answer.toLowerCase().indexOf('no')>-1||answer.toLowerCase().indexOf('not')>-1||answer.toLowerCase().indexOf('nope')>-1)
-      {
-           session.send("Well, that's all the information I have. You can call 57575757575 for more information. Ping me 'hi' if you want to know something else.")
-           session.beginDialog('/') 
-     }
-      else if(answer.toLowerCase().indexOf('yes')>-1||answer.toLowerCase().indexOf('yeah')>-1||answer.toLowerCase().indexOf('yup')>-1)  
-      {
-          session.send("Well, that's great! Happy to help.")  
-          session.beginDialog('/')      
-      }
-       else
-      {
-          session.beginDialog('/exceptions')
-      }           
-}    
+    }    
 ])
 
 
