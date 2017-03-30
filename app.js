@@ -219,7 +219,7 @@ function(session, results){
 
 bot.dialog('/extra', [
     function (session) {
-        builder.Prompts.text(session, 'Hi! I am your cognitive assistant. Ask me any question');
+        builder.Prompts.text(session, 'Hi! I am your Cognitive oil assist. Ask me any question');
     },
     function(session, results)
     {
